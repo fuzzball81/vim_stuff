@@ -10,3 +10,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/fswitch"]
+	path = bundle/fswitch
+	url = git://github.com/derekwyatt/vim-fswitch.git
