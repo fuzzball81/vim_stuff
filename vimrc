@@ -1,5 +1,6 @@
 call pathogen#infect()
 call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 " set number
 let c_space_errors = 1
 let g:load_doxygen_syntax=1
