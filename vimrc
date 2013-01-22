@@ -7,8 +7,7 @@ let g:load_doxygen_syntax=1
 set incsearch
 syntax on
 
-set background=dark
-colorscheme solarized
+colorscheme relaxedgreen
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
 
