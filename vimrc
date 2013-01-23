@@ -7,7 +7,14 @@ let g:load_doxygen_syntax=1
 set incsearch
 syntax on
 
-colorscheme relaxedgreen
+set background=dark
+
+let s:uname = system("echo -n \"$(uname)\"")
+if s:uname == "Linux"
+	colorscheme relaxedgreen
+else
+	colorscheme solarized
+endif
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
 
