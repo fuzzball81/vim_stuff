@@ -16,3 +16,6 @@
 [submodule "bundle/vim-colorschemes"]
 	path = bundle/vim-colorschemes
 	url = http://github.com/flazz/vim-colorschemes.git
+[submodule "bundle/trailing-whitespace"]
+	path = bundle/trailing-whitespace
+	url = git://github.com/vim-scripts/trailing-whitespace.git
