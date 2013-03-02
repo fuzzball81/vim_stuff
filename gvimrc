@@ -41,3 +41,6 @@ let OmniCpp_ShowScopeInAbbr = 1
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif 
 set completeopt=menuone,menu,longest
 
+set wildmode=longest:full
+set wildmenu
+
