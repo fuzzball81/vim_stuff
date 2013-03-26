@@ -19,3 +19,6 @@
 [submodule "bundle/trailing-whitespace"]
 	path = bundle/trailing-whitespace
 	url = git://github.com/vim-scripts/trailing-whitespace.git
+[submodule "bundle/scons.vim"]
+	path = bundle/scons.vim
+	url = https://github.com/vim-scripts/scons.vim.git
