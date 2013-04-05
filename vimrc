@@ -29,8 +29,10 @@ set cin
 set ai
 set si
 set noci
-
+set hlsearch
 set nu
+map <silent> <F1> :let @/=""<CR>
+
 
 au BufNewFile,BufRead SCons* set filetype=scons
 
