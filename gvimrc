@@ -46,3 +46,14 @@ set completeopt=menuone,menu,longest
 set wildmode=longest:full
 set wildmenu
 
+let g:syntastic_python_checker = 'pyflakes'
+
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=0
+let g:syntastic_enable_highlighting=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
+
+let g:syntastic_mode_map = { 'mode': 'active',
+		\ 'active_filetypes': ['python', 'javascript', 'css', 'html'],
+			\ 'passive_filetypes': ['make','cpp','c'] }
