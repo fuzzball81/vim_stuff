@@ -1,9 +1,13 @@
 call pathogen#infect()
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
 " set number
 let c_space_errors = 1
 let g:load_doxygen_syntax=1
 set incsearch
 syntax on
+set background=dark
+colorscheme solarized
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
 
@@ -23,8 +27,6 @@ set nu
 
 map <silent> <F1> :let @/=""<CR>
 
-set background=dark
-colorscheme solarized
 
 au BufNewFile,BufRead SCons* set filetype=scons
 
@@ -46,7 +48,10 @@ set completeopt=menuone,menu,longest
 set wildmode=longest:full
 set wildmenu
 
-let g:syntastic_python_checker = 'pyflakes'
+let g:syntastic_python_checker = 'flake8'
+" Disable E501(over 79 chars), W191(tabs instead of space), W391(blank line at
+" end of file
+let g:syntastic_python_flake8_args='--ignore=E501,W191,W391'
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=0
