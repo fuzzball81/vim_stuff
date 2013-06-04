@@ -50,8 +50,8 @@ set wildmenu
 
 let g:syntastic_python_checker = 'flake8'
 " Disable E501(over 79 chars), W191(tabs instead of space), W391(blank line at
-" end of file
-let g:syntastic_python_flake8_args='--ignore=E501,W191,W391'
+" end of file, E126(indent over 4 spaces)
+let g:syntastic_python_flake8_args='--ignore=E501,W191,W391,E126'
 
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=0
