@@ -1,4 +1,4 @@
-This is my ~/.vim dir:
+This is my ~/dotfiles/vim dir:
 
 Installation
 ============
@@ -22,4 +22,4 @@ git submodule foreach git pull origin master
 Special Thanks
 ==============
 
-yazug (http:/lgithub.com/yazug)
+yazug (http://github.com/yazug)
