@@ -9,11 +9,15 @@ syntax on
 
 set background=dark
 
-let s:uname = system("echo -n \"$(uname)\"")
-if s:uname == "Linux"
-	colorscheme relaxedgreen
-else
+if has("gui_running")
 	colorscheme solarized
+else
+	let s:uname = system("echo -n \"$(uname)\"")
+	if s:uname == "Linux"
+		colorscheme relaxedgreen
+	else
+		colorscheme solarized
+	endif
 endif
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
@@ -54,7 +58,7 @@ set completeopt=menuone,menu,longest
 set wildmode=longest:full
 set wildmenu
 
-let g:syntastic_python_checker = 'flake8'
+let g:syntastic_python_checkers=['flake8']
 " Disable E501(over 79 chars), W191(tabs instead of space), W391(blank line at
 " end of file, E126(indent over 4 spaces)
 let g:syntastic_python_flake8_args='--ignore=E501,W191,W391,E126'
