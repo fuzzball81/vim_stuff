@@ -42,13 +42,12 @@ au BufNewFile,BufRead SCons* set filetype=scons
 
 
 " OmniCppComplete Stuff
-set tags+=tags;$HOME
 set tags+=~/.vim/tags/cpp
 
 set nocp
 filetype plugin on
 set ofu=syntaxcomplete#Complete
-
+autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
 let OmniCpp_ShowScopeInAbbr = 1
 
 " automatically open and close the popup menu / preview window 
@@ -72,3 +71,6 @@ let g:syntastic_loc_list_height=5
 let g:syntastic_mode_map = { 'mode': 'active',
 		\ 'active_filetypes': ['python', 'javascript', 'css', 'html'],
 			\ 'passive_filetypes': ['make','cpp','c'] }
+
+"Jedi Stuff
+let g:jedi#use_tabs_not_buffers = 0
