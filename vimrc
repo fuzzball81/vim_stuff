@@ -74,3 +74,4 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 "Jedi Stuff
 let g:jedi#use_tabs_not_buffers = 0
+set backspace=indent,eol,start

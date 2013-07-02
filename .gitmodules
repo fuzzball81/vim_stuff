@@ -13,12 +13,14 @@
 [submodule "bundle/omnicppcomplete"]
 	path = bundle/omnicppcomplete
 	url = git://github.com/vim-scripts/OmniCppComplete.git
+	ignore = untracked
 [submodule "bundle/vim-colorschemes"]
 	path = bundle/vim-colorschemes
 	url = http://github.com/flazz/vim-colorschemes.git
 [submodule "bundle/trailing-whitespace"]
 	path = bundle/trailing-whitespace
 	url = git://github.com/vim-scripts/trailing-whitespace.git
+	ignore = untracked
 [submodule "bundle/scons.vim"]
 	path = bundle/scons.vim
 	url = https://github.com/vim-scripts/scons.vim.git
