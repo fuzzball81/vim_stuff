@@ -8,16 +8,11 @@ set incsearch
 syntax on
 
 set background=dark
-
-if has("gui_running")
-	colorscheme solarized
+let s:uname = system("echo -n \"$(uname)\"")
+if s:uname == "Linux"
+	colorscheme relaxedgreen
 else
-	let s:uname = system("echo -n \"$(uname)\"")
-	if s:uname == "Linux"
-		colorscheme relaxedgreen
-	else
-		colorscheme solarized
-	endif
+	colorscheme solarized
 endif
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
