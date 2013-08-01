@@ -7,6 +7,10 @@ let g:load_doxygen_syntax=1
 set incsearch
 syntax on
 
+filetype plugin indent on
+
+set laststatus=2
+
 set background=dark
 let s:uname = system("echo -n \"$(uname)\"")
 if s:uname == "Linux"
@@ -34,7 +38,6 @@ map <silent> <F1> :let @/=""<CR>
 
 
 au BufNewFile,BufRead SCons* set filetype=scons
-
 
 " OmniCppComplete Stuff
 set tags+=~/.vim/tags/cpp
