@@ -11,10 +11,16 @@ filetype plugin indent on
 
 set laststatus=2
 
+set t_Co=256
 set background=dark
 let s:uname = system("echo -n \"$(uname)\"")
 if s:uname == "Linux"
-	colorscheme relaxedgreen
+	if has('gui_running')
+		set guifont=Liberation\ Mono\ for\ Powerline\ 10
+		colorscheme relaxedgreen
+	else
+		colorscheme darkeclipse
+	endif
 else
 	colorscheme solarized
 endif
@@ -85,3 +91,7 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+
+let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
+set noshowmode
