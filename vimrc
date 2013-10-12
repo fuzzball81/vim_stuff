@@ -94,4 +94,6 @@ EOF
 
 let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
+set ambiwidth=double
+set ttimeoutlen=50
 set noshowmode
