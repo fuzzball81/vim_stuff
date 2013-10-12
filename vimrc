@@ -13,16 +13,12 @@ set laststatus=2
 
 set t_Co=256
 set background=dark
-let s:uname = system("echo -n \"$(uname)\"")
-if s:uname == "Linux"
-	if has('gui_running')
-		set guifont=Liberation\ Mono\ for\ Powerline\ 10
-		colorscheme relaxedgreen
-	else
-		colorscheme darkeclipse
-	endif
+
+if has('gui_running')
+	set guifont=Liberation\ Mono\ for\ Powerline\ 10
+	colorscheme relaxedgreen
 else
-	colorscheme solarized
+	colorscheme darkeclipse
 endif
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
