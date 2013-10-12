@@ -15,7 +15,7 @@ set t_Co=256
 set background=dark
 
 if has('gui_running')
-	set guifont=Liberation\ Mono\ for\ Powerline\ 10
+	set guifont=Liberation\ Mono\ for\ Powerline:h10
 	colorscheme relaxedgreen
 else
 	colorscheme darkeclipse
