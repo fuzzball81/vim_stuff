@@ -18,7 +18,7 @@ if has('gui_running')
 	if has('gui_gtk2')
 		set guifont=Liberation\ Mono\ for\ Powerline\ 10
 	else
-		set guifont=Liberation\ Mono\ for\ Powerline:h10
+		set guifont=Liberation\ Mono\ for\ Powerline:h11
 	endif
 
 	colorscheme relaxedgreen
