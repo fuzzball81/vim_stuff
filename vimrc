@@ -22,8 +22,6 @@ if has('gui_running')
 	endif
 
 	colorscheme relaxedgreen
-else
-	colorscheme darkeclipse
 endif
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
