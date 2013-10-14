@@ -15,7 +15,12 @@ set t_Co=256
 set background=dark
 
 if has('gui_running')
-	set guifont=Liberation\ Mono\ for\ Powerline:h10
+	if has('gui_gtk2')
+		set guifont=Liberation\ Mono\ for\ Powerline\ 10
+	else
+		set guifont=Liberation\ Mono\ for\ Powerline:h10
+	endif
+
 	colorscheme relaxedgreen
 else
 	colorscheme darkeclipse
@@ -50,8 +55,8 @@ set ofu=syntaxcomplete#Complete
 autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
 let OmniCpp_ShowScopeInAbbr = 1
 
-" automatically open and close the popup menu / preview window 
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif 
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest
 
 set wildmode=longest:full
@@ -70,7 +75,7 @@ let g:syntastic_loc_list_height=5
 
 let g:syntastic_mode_map = { 'mode': 'active',
 		\ 'active_filetypes': ['python', 'javascript', 'css', 'html'],
-			\ 'passive_filetypes': ['make','cpp','c'] }
+		\ 'passive_filetypes': ['make','cpp','c'] }
 
 "Jedi Stuff
 let g:jedi#use_tabs_not_buffers = 0
@@ -93,7 +98,6 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
-set ambiwidth=double
+"set ambiwidth=double
 set ttimeoutlen=50
 set noshowmode
