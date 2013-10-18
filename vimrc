@@ -20,9 +20,9 @@ if has('gui_running')
 	else
 		set guifont=Liberation\ Mono\ for\ Powerline:h11
 	endif
-
-	colorscheme relaxedgreen
 endif
+
+colorscheme relaxedgreen
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
 
@@ -99,3 +99,8 @@ let g:airline_powerline_fonts = 1
 "set ambiwidth=double
 set ttimeoutlen=50
 set noshowmode
+
+" Fix tmux background color
+if &term =~ '256color'
+	set t_ut=
+endif
