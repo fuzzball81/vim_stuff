@@ -45,14 +45,19 @@ map <silent> <F1> :let @/=""<CR>
 au BufNewFile,BufRead SCons* set filetype=scons
 
 " OmniCppComplete Stuff
-set tags+=~/.vim/tags/cpp
-
 set nocp
 filetype plugin on
 set ofu=syntaxcomplete#Complete
-autocmd FileType cpp set omnifunc=omni#cpp#complete#Main
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 let OmniCpp_ShowScopeInAbbr = 1
-
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest
@@ -65,15 +70,18 @@ let g:syntastic_python_checkers=['flake8']
 " end of file, E126(indent over 4 spaces)
 let g:syntastic_python_flake8_args='--ignore=E501,W191,W391,E126'
 
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=0
-let g:syntastic_enable_highlighting=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
-
-let g:syntastic_mode_map = { 'mode': 'active',
-		\ 'active_filetypes': ['python', 'javascript', 'css', 'html'],
-		\ 'passive_filetypes': ['make','cpp','c'] }
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_auto_refresh_includes = 1
+let g:syntastic_cpp_compiler = 'g++'
+"let g:syntastic_mode_map = { 'mode': 'active',
+"		\ 'active_filetypes': ['python', 'javascript', 'css', 'html'],
+"		\ 'passive_filetypes': ['make','cpp','c'] }
 
 "Jedi Stuff
 let g:jedi#use_tabs_not_buffers = 0
