@@ -33,6 +33,7 @@ func! TrimWhiteSpace()
   ''
 :endfunction
 
+set backspace=indent,eol,start
 set cin
 set ai
 set si
@@ -40,7 +41,6 @@ set noci
 set hlsearch
 set nu
 map <silent> <F1> :let @/=""<CR>
-
 
 au BufNewFile,BufRead SCons* set filetype=scons
 
@@ -85,11 +85,14 @@ let g:syntastic_cpp_compiler = 'g++'
 
 "Jedi Stuff
 let g:jedi#use_tabs_not_buffers = 0
-set backspace=indent,eol,start
 let g:jedi#popup_on_dot = 0
 
 " Supertab Setup
-let g:SuperTabDefaultCompletionType = "context"
+autocmd FileType *
+    \ if &omnifunc != '' |
+    \   call SuperTabChain(&omnifunc, "<c-p>") |
+    \   call SuperTabSetDefaultCompletionType("<c-x><c-u>") |
+    \ endif
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
@@ -112,3 +115,22 @@ set noshowmode
 if &term =~ '256color'
 	set t_ut=
 endif
+
+function! SetTabsToSpaces()
+  setlocal tabstop=4
+  setlocal softtabstop=4
+  setlocal shiftwidth=4
+  setlocal smarttab
+  setlocal expandtab
+:endfunction
+
+function! SetSpacesToTabs()
+  setlocal tabstop=5
+  setlocal softtabstop=5
+  setlocal shiftwidth=5
+  setlocal smarttab
+  setlocal noexpandtab
+:endfunction
+
+map <silent> <F2> :call SetTabsToSpaces()<CR>
+map <silent> <F3> :call SetSpacesToTabs()<CR>
