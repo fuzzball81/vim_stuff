@@ -16,7 +16,7 @@ or by sourcing it from  your own ~/.vimrc:
 `source ~/dotfiles/vim/vimrc`
 
 Update all submodules:
-git submodule foreach git pull origin master
+`git submodule foreach git pull origin master`
 
 Special Thanks
 ==============
