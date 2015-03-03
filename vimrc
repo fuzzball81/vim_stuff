@@ -135,3 +135,11 @@ function! SetSpacesToTabs()
 
 map <silent> <F2> :call SetTabsToSpaces()<CR>
 map <silent> <F3> :call SetSpacesToTabs()<CR>
+
+set cursorline
+hi cursorline gui=none ctermbg=none
+augroup CursorLineOnlyInActiveWindow
+	autocmd!
+	autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+	autocmd WinLeave * setlocal nocursorline
+augroup END 
