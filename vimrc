@@ -11,6 +11,17 @@ filetype plugin indent on
 
 set laststatus=2
 
+let g:airline_powerline_fonts = 1
+"set ambiwidth=double
+let g:airline#extensions#tabline#enabled = 1
+set ttimeoutlen=50
+set noshowmode
+
+" Fix tmux background color
+if &term =~ '256color'
+	set t_ut=
+endif
+
 set t_Co=256
 set background=dark
 
@@ -22,7 +33,8 @@ if has('gui_running')
 	endif
 endif
 
-colorscheme relaxedgreen
+" colorscheme relaxedgreen
+colorscheme askapachecode
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
 
@@ -106,16 +118,6 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-let g:airline_powerline_fonts = 1
-"set ambiwidth=double
-let g:airline#extensions#tabline#enabled = 1
-set ttimeoutlen=50
-set noshowmode
-
-" Fix tmux background color
-if &term =~ '256color'
-	set t_ut=
-endif
 
 function! SetTabsToSpaces()
   setlocal tabstop=4
@@ -137,9 +139,9 @@ map <silent> <F2> :call SetTabsToSpaces()<CR>
 map <silent> <F3> :call SetSpacesToTabs()<CR>
 
 set cursorline
-hi cursorline gui=none ctermbg=none
+"hi cursorline gui=none ctermbg=none
 augroup CursorLineOnlyInActiveWindow
 	autocmd!
 	autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 	autocmd WinLeave * setlocal nocursorline
-augroup END 
+augroup END
