@@ -5,7 +5,7 @@
 " %s/[\t] {1, }/ /g | %s/[\t]*//g
 
 
-
+set t_Co=256
 set background=dark
 hi clear
 
