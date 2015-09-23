@@ -156,3 +156,4 @@ function! LoadCscope()
 	endif
 endfunction
 au BufEnter /* call LoadCscope()
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
