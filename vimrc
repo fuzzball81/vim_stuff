@@ -1,27 +1,31 @@
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" Bundles
-Bundle 'gmarik/vundle'
-Bundle 'ervandew/supertab'
-Bundle 'vim-scripts/OmniCppComplete'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'vim-scripts/trailing-whitespace'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'bling/vim-airline'
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-filetype on
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins
+Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-scripts/trailing-whitespace'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'bling/vim-airline'
+call vundle#end() 
+
+filetype plugin indent on
 
 " set number
 let c_space_errors = 1
 let g:load_doxygen_syntax=1
 set incsearch
 syntax on
-
-filetype plugin indent on
 
 set laststatus=2
 
