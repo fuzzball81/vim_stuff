@@ -10,7 +10,7 @@ Make a symlink:
 `ln -s ~/dotfiles/vim ~/.vim`
 
 Clone Vundle:
-`git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 Make sure vim finds the vimrc file by either symlinking it:
 `ln -s ~/dotfiles/vim/vimrc ~/.vimrc`
