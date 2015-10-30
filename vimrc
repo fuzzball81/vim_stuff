@@ -49,10 +49,10 @@ if has('gui_running')
 	else
 		set guifont=Liberation\ Mono\ for\ Powerline:h11
 	endif
+	colorscheme relaxedgreen
+else
+	colorscheme askapachecode
 endif
-
-" colorscheme relaxedgreen
-colorscheme askapachecode
 
 imap <F5> <C-o>:setlocal spell! spelllang=en_us<CR>
 
@@ -102,7 +102,7 @@ let g:syntastic_python_flake8_args='--ignore=E501,W391'
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
-"let g:syntastic_error_symbol = '✗'
+let g:syntastic_error_symbol = '✗'
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_loc_list_height = 5
